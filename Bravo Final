@@ -1,0 +1,322 @@
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'bravo_final_model.dart';
+export 'bravo_final_model.dart';
+
+class BravoFinalWidget extends StatefulWidget {
+  const BravoFinalWidget({Key? key}) : super(key: key);
+
+  @override
+  _BravoFinalWidgetState createState() => _BravoFinalWidgetState();
+}
+
+class _BravoFinalWidgetState extends State<BravoFinalWidget>
+    with TickerProviderStateMixin {
+  late BravoFinalModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = {
+    'textOnPageLoadAnimation1': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        VisibilityEffect(duration: 100.ms),
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 100.ms,
+          duration: 400.ms,
+          begin: 0,
+          end: 1,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 100.ms,
+          duration: 400.ms,
+          begin: Offset(0, 30),
+          end: Offset(0, 0),
+        ),
+      ],
+    ),
+    'textOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        VisibilityEffect(duration: 150.ms),
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 150.ms,
+          duration: 400.ms,
+          begin: 0,
+          end: 1,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 150.ms,
+          duration: 400.ms,
+          begin: Offset(0, 30),
+          end: Offset(0, 0),
+        ),
+      ],
+    ),
+  };
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => BravoFinalModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).night,
+          automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
+          title: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
+            child: Text(
+              'Bravo',
+              style: FlutterFlowTheme.of(context).headlineMedium.override(
+                    fontFamily: 'Poppins',
+                    color: Colors.white,
+                    fontSize: 22,
+                  ),
+            ),
+          ),
+          actions: [],
+          centerTitle: false,
+          elevation: 2,
+        ),
+        body: SafeArea(
+          top: true,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Container(
+                width: double.infinity,
+                height: 367,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      FlutterFlowTheme.of(context).amethyst,
+                      FlutterFlowTheme.of(context).lineColor,
+                      FlutterFlowTheme.of(context).amethyst
+                    ],
+                    stops: [0, 0.5, 1],
+                    begin: AlignmentDirectional(-1, -1),
+                    end: AlignmentDirectional(1, 1),
+                  ),
+                ),
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0x00FFFFFF),
+                        FlutterFlowTheme.of(context).secondaryBackground
+                      ],
+                      stops: [0, 1],
+                      begin: AlignmentDirectional(0, -1),
+                      end: AlignmentDirectional(0, 1),
+                    ),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          'assets/images/bravo-removebg-preview.png',
+                          width: 187,
+                          height: 159,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                        child: Text(
+                          'Poxa vida',
+                          style: FlutterFlowTheme.of(context).headlineSmall,
+                        ).animateOnPageLoad(
+                            animationsMap['textOnPageLoadAnimation1']!),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                        child: Text(
+                          'Gostaria de desabafar em seu diário?',
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 14,
+                                  ),
+                        ).animateOnPageLoad(
+                            animationsMap['textOnPageLoadAnimation2']!),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional(0.00, 0.00),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            context.pushNamed('TelaInicial');
+                          },
+                          text: 'Atividades',
+                          options: FFButtonOptions(
+                            height: 40,
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                            iconPadding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                            color: FlutterFlowTheme.of(context).amethyst,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                ),
+                            elevation: 3,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1,
+                            ),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional(0.00, 0.00),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            context.pushNamed(
+                              'TelaInicial',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                ),
+                              },
+                            );
+                          },
+                          text: 'Tela Inicial',
+                          options: FFButtonOptions(
+                            height: 40,
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                            iconPadding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                            color: FlutterFlowTheme.of(context).amethyst,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                ),
+                            elevation: 3,
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).amethyst,
+                              width: 1,
+                            ),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.00, 0.00),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Align(
+                          alignment: AlignmentDirectional(0.00, 0.00),
+                          child: FFButtonWidget(
+                            onPressed: () {
+                              print('Button pressed ...');
+                            },
+                            text: 'Diário',
+                            options: FFButtonOptions(
+                              height: 40,
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                              iconPadding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                              color: Colors.white,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.black,
+                                  ),
+                              elevation: 3,
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).amethyst,
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
