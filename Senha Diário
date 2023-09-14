@@ -1,77 +1,36 @@
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import 'feliz_final_model.dart';
-export 'feliz_final_model.dart';
+import 'senha_para_diario_model.dart';
+export 'senha_para_diario_model.dart';
 
-class FelizFinalWidget extends StatefulWidget {
-  const FelizFinalWidget({Key? key}) : super(key: key);
+class SenhaParaDiarioWidget extends StatefulWidget {
+  const SenhaParaDiarioWidget({
+    Key? key,
+    required this.entrar,
+  }) : super(key: key);
+
+  final bool? entrar;
 
   @override
-  _FelizFinalWidgetState createState() => _FelizFinalWidgetState();
+  _SenhaParaDiarioWidgetState createState() => _SenhaParaDiarioWidgetState();
 }
 
-class _FelizFinalWidgetState extends State<FelizFinalWidget>
-    with TickerProviderStateMixin {
-  late FelizFinalModel _model;
+class _SenhaParaDiarioWidgetState extends State<SenhaParaDiarioWidget> {
+  late SenhaParaDiarioModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  final animationsMap = {
-    'textOnPageLoadAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 100.ms),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 400.ms,
-          begin: 0,
-          end: 1,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 400.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
-        ),
-      ],
-    ),
-    'textOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 150.ms),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 150.ms,
-          duration: 400.ms,
-          begin: 0,
-          end: 1,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 150.ms,
-          duration: 400.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
-        ),
-      ],
-    ),
-  };
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => FelizFinalModel());
+    _model = createModel(context, () => SenhaParaDiarioModel());
   }
 
   @override
@@ -89,9 +48,8 @@ class _FelizFinalWidgetState extends State<FelizFinalWidget>
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).night,
+          backgroundColor: Colors.black,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -107,19 +65,16 @@ class _FelizFinalWidgetState extends State<FelizFinalWidget>
               context.pop();
             },
           ),
-          title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(110, 0, 0, 0),
-            child: Text(
-              'Feliz',
-              style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Poppins',
-                    color: Colors.white,
-                    fontSize: 22,
-                  ),
-            ),
+          title: Text(
+            'Senha',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Poppins',
+                  color: Colors.white,
+                  fontSize: 22,
+                ),
           ),
           actions: [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2,
         ),
         body: SafeArea(
@@ -127,200 +82,135 @@ class _FelizFinalWidgetState extends State<FelizFinalWidget>
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: 367,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          FlutterFlowTheme.of(context).amethyst,
-                          FlutterFlowTheme.of(context).lineColor,
-                          FlutterFlowTheme.of(context).amethyst
-                        ],
-                        stops: [0, 0.5, 1],
-                        begin: AlignmentDirectional(-1, -1),
-                        end: AlignmentDirectional(1, 1),
-                      ),
-                    ),
-                    child: Container(
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Color(0x00FFFFFF),
-                            FlutterFlowTheme.of(context).secondaryBackground
-                          ],
-                          stops: [0, 1],
-                          begin: AlignmentDirectional(0, -1),
-                          end: AlignmentDirectional(0, 1),
-                        ),
-                      ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.asset(
-                              'assets/images/feliz-removebg-preview.png',
-                              width: 187,
-                              height: 159,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
-                            child: Text(
-                              'Que coisa boa',
-                              style: FlutterFlowTheme.of(context).headlineSmall,
-                            ).animateOnPageLoad(
-                                animationsMap['textOnPageLoadAnimation1']!),
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                            child: Text(
-                              'Conte-nos o que causou esse sentimento',
-                              style: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 14,
-                                  ),
-                            ).animateOnPageLoad(
-                                animationsMap['textOnPageLoadAnimation2']!),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Align(
-                            alignment: AlignmentDirectional(0.00, 0.00),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed('TelaInicial');
-                              },
-                              text: 'Atividades',
-                              options: FFButtonOptions(
-                                height: 40,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24, 0, 24, 0),
-                                iconPadding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                                color: FlutterFlowTheme.of(context).amethyst,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                                elevation: 3,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Align(
-                            alignment: AlignmentDirectional(0.00, 0.00),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed(
-                                  'TelaInicial',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                    ),
-                                  },
-                                );
-                              },
-                              text: 'Tela Inicial',
-                              options: FFButtonOptions(
-                                height: 40,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24, 0, 24, 0),
-                                iconPadding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                                color: FlutterFlowTheme.of(context).amethyst,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                                elevation: 3,
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).amethyst,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                            ),
-                          ),
-                        ),
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        FlutterFlowTheme.of(context).amethyst,
+                        FlutterFlowTheme.of(context).lineColor,
+                        FlutterFlowTheme.of(context).primaryBtnText
                       ],
+                      stops: [0, 0.6, 0.9],
+                      begin: AlignmentDirectional(0, -1),
+                      end: AlignmentDirectional(0, 1),
+                    ),
+                    shape: BoxShape.rectangle,
+                    border: Border.all(
+                      color: FlutterFlowTheme.of(context).amethyst,
                     ),
                   ),
-                  Align(
-                    alignment: AlignmentDirectional(0.00, 0.00),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: Align(
-                              alignment: AlignmentDirectional(0.00, 0.00),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 150, 0, 0),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            'assets/images/Instagram_post_dia_mundial_do_gato_comemorativo_preto_e_branco_(1).png',
+                            width: 300,
+                            height: 200,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 40),
+                        child: Text(
+                          'Digite a senha para entrar em seu diário',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 18,
+                                  ),
+                        ),
+                      ),
+                      Form(
+                        key: _model.formKey,
+                        autovalidateMode: AutovalidateMode.disabled,
+                        child: Stack(
+                          children: [
+                            PinCodeTextField(
+                              autoDisposeControllers: false,
+                              appContext: context,
+                              length: 6,
+                              textStyle: FlutterFlowTheme.of(context).bodyLarge,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              enableActiveFill: false,
+                              autoFocus: true,
+                              enablePinAutofill: false,
+                              errorTextSpace: 16,
+                              showCursor: true,
+                              cursorColor: FlutterFlowTheme.of(context).primary,
+                              obscureText: true,
+                              obscuringCharacter: '*',
+                              hintCharacter: '●',
+                              keyboardType: TextInputType.number,
+                              pinTheme: PinTheme(
+                                fieldHeight: 44,
+                                fieldWidth: 44,
+                                borderWidth: 2,
+                                borderRadius: BorderRadius.circular(12),
+                                shape: PinCodeFieldShape.box,
+                                activeColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                inactiveColor:
+                                    FlutterFlowTheme.of(context).night,
+                                selectedColor:
+                                    FlutterFlowTheme.of(context).amethyst,
+                                activeFillColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                inactiveFillColor:
+                                    FlutterFlowTheme.of(context).night,
+                                selectedFillColor:
+                                    FlutterFlowTheme.of(context).amethyst,
+                              ),
+                              controller: _model.pinCodeController,
+                              onChanged: (_) {},
+                              autovalidateMode: AutovalidateMode.disabled,
+                              validator: _model.pinCodeControllerValidator
+                                  .asValidator(context),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  150, 150, 0, 0),
                               child: FFButtonWidget(
                                 onPressed: () {
                                   print('Button pressed ...');
                                 },
-                                text: 'Diário',
+                                text: 'Entrar',
                                 options: FFButtonOptions(
                                   height: 40,
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       24, 0, 24, 0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0, 0, 0, 0),
-                                  color: Colors.white,
+                                  color: FlutterFlowTheme.of(context).amethyst,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: Colors.black,
+                                        color: Colors.white,
+                                        fontSize: 17,
                                       ),
                                   elevation: 3,
                                   borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).amethyst,
+                                    color: Colors.transparent,
                                     width: 1,
                                   ),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ],
           ),
