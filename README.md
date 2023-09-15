@@ -11,13 +11,13 @@ Documento criado no dia 13/06/2023
 
    A terapia dialética comportamental é reconhecida por sua eficácia no tratamento de transtornos emocionais, como transtorno de personalidade borderline, depressão, ansiedade e vários outros. Com o MindCat, agora é possível acessar as técnicas e princípios da DBT a qualquer hora e em qualquer lugar.
 
-   Uma das principais características do MindCat é a disponibilidade de sessões terapêuticas online com profissionais especializados em DBT. Os usuários podem agendar consultas virtuais e se engajar em um processo terapêutico estruturado, focado em fornecer suporte emocional, ensinar habilidades de regulação emocional e promover mudanças comportamentais positivas.
+   Uma das principais características do MindCat é a disponibilidade de atividades baseadas no mindfulness. Os usuários podem se envolver em práticas de mindfulness para promover o bem-estar emocional, melhorar a regulação emocional e cultivar mudanças comportamentais positivas. 
 
-   Além das sessões terapêuticas, o MindCat oferece uma variedade de recursos e ferramentas para auxiliar os usuários no desenvolvimento de habilidades de enfrentamento saudáveis. O aplicativo disponibiliza módulos de treinamento que abrangem áreas-chave da DBT, como a regulação emocional, a tolerância ao desconforto e o desenvolvimento de relacionamentos saudáveis.
+   O MindCat oferece uma variedade de recursos e ferramentas para auxiliar os usuários no desenvolvimento de habilidades de enfrentamento saudáveis. O aplicativo disponibiliza módulos de treinamento que abrangem áreas-chave da DBT, como a regulação emocional, a tolerância ao desconforto e o desenvolvimento de relacionamentos saudáveis.
 
    O MindCat também inclui um diário de emoções integrado, permitindo que os usuários registrem suas emoções, pensamentos e comportamentos ao longo do tempo. Essa funcionalidade auxilia no monitoramento dos padrões de comportamento, facilitando a identificação de desafios específicos e a aplicação de estratégias de enfrentamento apropriadas.
 
-   Além disso, o aplicativo conta com um recurso de notificações diárias para lembrar os usuários de praticar habilidades aprendidas na DBT. Essas práticas diárias ajudam a consolidar o aprendizado e a promover a aplicação das técnicas terapêuticas no cotidiano.
+   O aplicativo oferece suporte emocional valioso, mas não deve ser considerado como substituto de uma terapia com um psicólogo qualificado. Enquanto fornece ferramentas úteis para autogerenciamento, a intervenção profissional é essencial para abordar questões complexas e garantir um tratamento completo e personalizado.
 
    A privacidade e segurança dos usuários são prioridades fundamentais do MindCat. Todas as informações pessoais e dados compartilhados são tratados com a máxima confidencialidade, seguindo rigorosos padrões de segurança e proteção de dados.
 
